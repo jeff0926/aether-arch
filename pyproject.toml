@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aether-arch"
+version = "0.1.0"
+description = "Agentic system for architectural solutions: requirements -> validated JSON architecture -> high-fidelity draw.io diagrams."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "jeff0926" }]
+license = { text = "MIT" }
+dependencies = [
+    "pydantic>=2.6",
+    "click>=8.1",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0"]
+anthropic = ["anthropic>=0.40"]
+vertex = ["google-genai>=0.3"]
+
+[project.scripts]
+aether = "aether.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["aether*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
