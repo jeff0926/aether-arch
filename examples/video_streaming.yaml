@@ -1,0 +1,8 @@
+# Example human-authored requirement.  YAML is the human ingestion format,
+# JSON is the machine exchange format (per the PDF's non-lossy schema rule).
+# Invoke with:
+#   aether build "$(yq '.requirement' examples/video_streaming.yaml)"
+requirement: |
+  Low-latency video streaming platform for 10 million global users.
+  Must remain available during regional network partitions.
+  Budget: $50000/month.  HIPAA compliance required.
